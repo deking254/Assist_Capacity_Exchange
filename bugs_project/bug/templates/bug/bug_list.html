@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bug List</title>
+</head>
+<body>
+    <h1>List of Bugs</h1>
+    <ul>
+        {% for bug in bugs %}
+            <li>
+                <a href="{% url 'bug-details' bug.id %}">
+                    {{ bug.description }} ({{ bug.bug_type }} {{bug.report_date}} - {{ bug.status }})
+                </a>
+            </li>
+        {% empty %}
+            <li>No bugs registered yet.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'bug-add' %}">Add a Bug</a>
+</body>
+</html>

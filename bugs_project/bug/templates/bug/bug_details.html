@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bug Details</title>
+</head>
+<body>
+    <h1>Bug Details</h1>
+    <ul>
+        <li><strong>Description:</strong> {{ bug.description }}</li>
+        <li><strong>Bug Type:</strong> {{ bug.bug_type }}</li>
+	<li><strong>Report date:</strong> {{ bug.report_date }}</li>
+        <li><strong>Status:</strong> {{ bug.status }}</li>
+    </ul>
+    <a href="{% url 'bug-list' %}">Back to Bug List</a>
+</body>
+</html>

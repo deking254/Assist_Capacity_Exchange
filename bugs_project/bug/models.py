@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class Bug(models.Model):
@@ -6,6 +7,6 @@ class Bug(models.Model):
 
     description = models.CharField(max_length=200)
     bug_type = models.CharField(max_length=200)
-    report_date = models.DateTimeField("report date")
+    report_date = models.DateTimeField(default=timezone.now)
     status = models.CharField(max_length=200)
 	
